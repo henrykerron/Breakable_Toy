@@ -15,7 +15,7 @@ feature "User can view all reviews on index page", %q(
     reviews = FactoryGirl.create_list(:review, 2)
 
     visit reviews_path
-save_and_open_page
+
     reviews.each do |review|
       expect(page).to have_content(review.title)
     end
