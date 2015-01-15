@@ -6,6 +6,8 @@ feature "User Sign Up", %q(
   I want to be able to sign up
   So that I can create an account
 
+  Acceptance Criteria:
+
   [x] There is a link to 'Sign Up'
   [x] After filling in the required fields and signing up I am greeted with a success message
   [x] If the password and password confirmation fields do not match, I am given an error message
