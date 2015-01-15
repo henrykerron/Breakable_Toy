@@ -30,7 +30,7 @@ feature "User Sign In", %q(
     visit new_user_session_path
 
     click_button "Log in"
-    save_and_open_page
+
     expect(page).to have_content("Invalid email or password")
   end
 end
