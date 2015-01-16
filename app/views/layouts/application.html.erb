@@ -28,6 +28,7 @@
       <% else %>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></li>
       <% end %>
+      <li><%= link_to "Post a review!", new_review_path %>
         </ul>
       </li>
     </ul>

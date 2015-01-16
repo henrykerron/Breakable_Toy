@@ -1,28 +1,39 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# feature "User posts a video", %q(
+feature "User posts a video review", %q(
 
-#   As a visitor
-#   I want to be able to sign up
-#   So that I can create an account
+  As a user
+  I want to be able to post a video review
+  So that I can share my own video reviews with other users
 
-#   [x] There is q  a link to 'Sign Up'
-#   [x] After filling in the required fields and signing up I am greeted with a success message
-#   [x] If the password and password confirmation fields do not match, I am given an error message
-# ) do
+  [x] I must have a title, description and video emdeded
+  [x] After filling in the required fields and submitting I am greeted with a success message
+  [] If all fields are not filled out, I am given an error message
+) do
 
-#   scenario "user signs up with valid information" do
-#     visit root_path
-#     click_on "Sign Up"
+  scenario "user posts a review with valid information" do
+    review = FactoryGirl.create(:review)
+    user = FactoryGirl.create(:user)
+    visit root_path
 
-#     fill_in "Username", with: "gp"
-#     fill_in "Email", with: "gp@gmail.com"
-#     fill_in "Password", with: "password"
-#     fill_in "Password confirmation", with: "password"
+    click_on "Sign In"
 
-#     click_on "Sign up"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_on "Log in"
 
-#     expect(page).to have_content "Welcome! You have signed up successfully."
-#     expect(page).to_not have_link "Sign Up"
-#     expect(page).to have_link "Sign Out"
-#   end
+    click_on "Post a review!"
+
+    fill_in "Title", with: review.title
+    fill_in "Description", with: review.description
+    fill_in "Video", with: review.video
+
+    click_on "Submit"
+
+    expect(page).to have_content "Review created!"
+    expect(page).to have_content review.title
+    expect(page).to have_content review.description
+    #Working on displaying videos in testing
+    # expect(page).to have_content review.video
+  end
+end
