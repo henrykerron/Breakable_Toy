@@ -1,5 +1,14 @@
 <h1>Submit a Review</h1>
 
+<% if @review.errors.any? %>
+  <h2>Error!</h2>
+  <ul>
+  <% @review.errors.full_messages.each do |error_msg| %>
+    <li><%= error_msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @review do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %> <br/>
