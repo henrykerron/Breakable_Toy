@@ -9,7 +9,7 @@ FactoryGirl.define do
   factory :review do
     sequence(:title) { |n| "#{n} HTC One M8" }
     sequence(:description) { |n| "#{n} HTC Sense UI 7 over Android 5.0" }
-    video "video"
+    sequence(:video) { |n| "#{n} Video"}
 
     user
   end

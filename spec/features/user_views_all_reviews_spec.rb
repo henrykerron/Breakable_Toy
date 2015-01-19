@@ -8,7 +8,7 @@ feature "User can view all reviews on index page", %q(
 
   Acceptance Criteria:
   [x] I can see all reviews on the index page
-  [x] I can view a review's title
+  [x] I can view a review's title and image
 ) do
 
   scenario "user can view all reviews on index page" do
@@ -18,6 +18,8 @@ feature "User can view all reviews on index page", %q(
 
     reviews.each do |review|
       expect(page).to have_content(review.title)
+      expect(page).to have_content(review.image)
+
     end
   end
 end

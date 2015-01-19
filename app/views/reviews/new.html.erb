@@ -10,6 +10,9 @@
 <% end %>
 
 <%= form_for @review do |f| %>
+  <%= f.label :image %><br />
+  <%= f.file_field :image %>
+
   <%= f.label :title %>
   <%= f.text_field :title %> <br/>
 

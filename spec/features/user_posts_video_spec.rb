@@ -34,6 +34,7 @@ feature "User posts a video review", %q(
     expect(page).to have_content "Review created!"
     expect(page).to have_content review.title
     expect(page).to have_content review.description
+    expect(page).to have_content review.image
     #Working on displaying videos in testing
     # expect(page).to have_content review.video
   end
