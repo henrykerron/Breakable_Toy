@@ -20,6 +20,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
   def review_params
     params.require(:review).permit(:title, :description, :video, :image)
   end

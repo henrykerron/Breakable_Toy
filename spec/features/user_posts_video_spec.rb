@@ -6,7 +6,7 @@ feature "User posts a video review", %q(
   I want to be able to post a video review
   So that I can share my own video reviews with other users
 
-  [x] I must have an image, title, description and video emdeded
+  [x] I must have an image and title on the index page
   [x] After filling in the required fields and submitting I am greeted with a success message
   [x] If all fields are not filled out, I am given an error message
   [x] Only a signed in user can post a review
@@ -33,10 +33,7 @@ feature "User posts a video review", %q(
 
     expect(page).to have_content "Review created!"
     expect(page).to have_content review.title
-    expect(page).to have_content review.description
     expect(page).to have_content review.image
-    #Working on displaying videos in testing
-    # expect(page).to have_content review.video
   end
 
   scenario "user can't post a review without invalid information" do

@@ -1,9 +1,8 @@
 <h1>Reviews Index</h1>
-<ul>
+
+
 <% @reviews.each do |review|%>
-  <%= image_tag review.image %>
-  <li><%= review.title %></li>
-  <li><%= review.description %></li>
-  <iframe width="560" height="315" src=<%= "#{review.video.gsub(/^(https:)/,"").gsub('watch?v=', "embed/")}" %> frameborder="0" allowfullscreen</iframe>
+  <div><%= image_tag review.image %></div>
+  <div><%= link_to review.title, review_path(review) %><div>
 <% end %>
-</ul>
+

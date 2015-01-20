@@ -1,0 +1,3 @@
+<%= @review.title %>
+<%= @review.description %>
+<iframe width="560" height="315" src=<%= "#{@review.video.gsub(/^(https:)/,"").gsub('watch?v=', "embed/")}" %> frameborder="0" allowfullscreen</iframe>
