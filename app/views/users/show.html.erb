@@ -1,0 +1,7 @@
+<div>
+  <% if current_user %>
+  <%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
+  <% end %>
+</div>
+<div>Username: <%= @user.username %></div>
+

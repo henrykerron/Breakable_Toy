@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'reviews#index'
 
   resources :reviews, only: [:index, :new, :create, :show]
+
+  resources :users, only: [:show]
 end

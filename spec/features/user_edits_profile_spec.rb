@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user profile", %{
+feature "user edits profile", %{
   As a user
   I want to edit my profile
   So that I can update my information
@@ -24,6 +24,8 @@ feature "user profile", %{
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_on "Log in"
+
+    click_on user.username
 
     click_on "Edit Profile"
 
